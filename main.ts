@@ -1,9 +1,3 @@
-input.onButtonPressed(Button.AB, function () {
-    basic.clearScreen()
-    led.setBrightness(255)
-    basic.showNumber(input.lightLevel())
-    basic.clearScreen()
-})
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     led.setBrightness(128)
@@ -21,7 +15,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
-    led.setBrightness(255)
+    led.setBrightness(input.lightLevel())
     basic.showLeds(`
         . # . # .
         # . # . #
@@ -29,8 +23,8 @@ input.onButtonPressed(Button.B, function () {
         . # . # .
         . . # . .
         `)
-    music.setVolume(255)
-    music.playMelody("C5 B A G F E D C ", 255)
-    music.playMelody("C D E F G A B C5 ", 255)
+    music.setVolume(input.lightLevel())
+    music.playMelody("C5 B A G F E D C ", input.lightLevel())
+    music.playMelody("C D E F G A B C5 ", input.lightLevel())
     basic.clearScreen()
 })
